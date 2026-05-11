@@ -1,0 +1,187 @@
+---
+# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
+# only main files contain this front matter, not partials.
+---
+
+//
+//
+//                        ___
+//                       /\_ \
+//  _____     ___     ___\//\ \      __
+// /\ '__`\  / __`\  / __`\\ \ \   /'__`\
+// \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
+//  \ \ ,__/\ \____/\ \____//\____\ \____\
+//   \ \ \/  \/___/  \/___/ \/____/\/____/
+//    \ \_\
+//     \/_/
+//
+// Designed, built, and released under MIT license by @mdo. Learn more at
+// https://github.com/poole/poole.
+
+@import "variables";
+@import "base";
+@import "type";
+@import "code";
+@import "layout";
+@import "sidebar";
+@import "posts";
+@import "archive";
+@import "home-header";
+@import "pagination";
+@import "message";
+@import "toc";
+@import "alignment";
+
+@import "syntax-light";
+@media (prefers-color-scheme: dark) {
+  @import "syntax-dark";
+}
+
+// Sass for creating the swatches
+.colors {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  dt {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.15);
+  }
+
+  dd {
+    margin-left: var(--spacer);
+  }
+}
+
+
+/* ===== 全站正文描述性文字的统一字体样式 ===== */
+
+.content,
+.content p,
+.content li,
+.content dd,
+.content dt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 1rem;              /* 和你给的截图视觉一致 */
+  color: #4a4a4a !important;    /* 柔和深灰，比纯黑好看 */
+  line-height: 1.7;             /* 阅读体验最佳 */
+}
+
+/* 正文里的加粗（如年份）稍微重一点，类似你截图效果 */
+.content strong {
+  font-weight: 600;
+}
+
+/* 标题也统一为无衬线（保持风格一致）*/
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "Helvetica Neue", Arial, sans-serif !important;
+  color: #333;                  /* 保持标题略深 */
+  font-weight: 700;
+}
+
+
+/* 修改左侧简介区字体颜色 */
+.sidebar-left {
+  color: #333 !important;
+}
+
+/* 左侧简介中的链接颜色 */
+.sidebar-left a {
+  color: #5E6A71 !important;
+}
+
+/* ===== Publications 里 paper 卡片的布局样式 ===== */
+
+.paper-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px #efefef solid;
+  padding: 2em 0;
+}
+
+/* 左侧图片区域 */
+.paper-box-image {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  order: 2;
+}
+
+.paper-box-image img {
+  max-width: 400px;
+  box-shadow: 3px 3px 6px #888;
+  object-fit: cover;
+}
+
+/* 右侧文字区域 */
+.paper-box-text {
+  max-width: 100%;
+  order: 1;
+}
+
+/* 中屏以上：左右排布 */
+@media (min-width: 48em) {
+  .paper-box-image {
+    justify-content: flex-start;
+    min-width: 200px;
+    max-width: 40%;
+    order: 1;
+  }
+
+  .paper-box-text {
+    justify-content: flex-start;
+    padding-left: 2em;
+    max-width: 60%;
+    order: 2;
+  }
+}
+
+/* 左上角蓝色 badge（可选） */
+.paper-box-image > div {
+  position: relative;
+}
+
+.paper-box-image .badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #0056b3;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+/* 更紧凑的论文文字行距 */
+.pub-item {
+  line-height: 1.35;
+}
+
+.pub-item p,
+.pub-item a,
+.pub-item strong,
+.pub-item em,
+.pub-item li {
+  line-height: 1.35;
+  margin-bottom: 0.25rem;  /* 控制段间距 */
+}
+
+.pub-item > blockquote {
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+
+
+

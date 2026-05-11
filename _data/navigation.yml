@@ -1,0 +1,14 @@
+- title: About
+  url: /#about
+  # url: /about/
+- title: Education
+  url: /#education
+  # url: /education/
+- title: News
+  url: /#news
+- title: Research
+  url: /#research
+  # url: /research/
+- title: Publications
+  url: /#publications
+  # url: /publications/
